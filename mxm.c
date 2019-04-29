@@ -9,7 +9,8 @@
    for (cc = 0; cc < ncols; cc++){
      for ( cr = 0; cr < nrows; cr++){
 //       matrix[cc*nrows + cr] = val;
-         matrix[cc*nrows + cr] = (double)rand();
+//       matrix[cc*nrows + cr] = (double)rand(); suffers from overflow issue
+         matrix[cc*nrows + cr] = fmod((double)rand(),40);
      }
    }
  }
@@ -32,7 +33,8 @@
    int nrowsA, ncolsB, common;
    int i,j,k;
    struct timeval t1, t2;
-   double elapsedTimeS,elapsedTimeU;
+   double elapsedTime;
+  //double elapsed = (end.tv_sec - begin.tv_sec) +  ((end.tv_usec - begin.tv_usec)/1000000.0);
  
    if (argc != 4){
      nrowsA = 4; ncolsB = 5; common = 3;
@@ -62,14 +64,11 @@
    gettimeofday(&t1, NULL); 
    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
    gettimeofday(&t2, NULL);
+   elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms
+   elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;   // us to ms
 
-   elapsedTimeU=(t2.tv_sec*1000.0 + t2.tv_usec/1000.0) - (t1.tv_sec*1000.0 + t1.tv_usec/1000.0);
-   elapsedTimeS=elapsedTimeU/1000.0;
-
-// elapsedTimeU=elapsedTimeU%1000.0;
-   elapsedTimeU=fmod(elapsedTimeU,1000.0);
    
-   printf("Elapsed: %.fs,%.4fms\n",elapsedTimeS,elapsedTimeU);
+   printf("Elapsed: %.4fms\n",elapsedTime);
 
    for(i=0;i<ncolsB;i++){
      for(j=0;j<nrowsA;j++){
@@ -84,7 +83,7 @@
      for(j=0;j<nrowsA;j++){
         if (D[i*nrowsA+j]!=C[i*nrowsA+j])
         {
-          printf("Error!");
+          printf("\n\nError!,%lf != %lf",D[i*nrowsA+j],C[i*nrowsA+j]);
           exit(1);
         }	
       }
@@ -94,6 +93,10 @@
 
 //   print("A", A, rowsA, common); print("B", B, common, colsB);
 //   print("C", C, rowsA, colsB); print("D", D, rowsA, colsB);
- 
+   free(A);
+   free(B);
+   free(C);
+   free(D);
+  
    return 0;
  }

@@ -1,0 +1,195 @@
+MESSAGE: BLIS Fri Apr 26 18:31:18 IST 2019 start
+mxm.c: In function ‘init’:
+mxm.c:6:56: warning: unused parameter ‘val’ [-Wunused-parameter]
+  void init(double* matrix, int nrows, int ncols,double val)
+                                                        ^~~
+mxm.c: In function ‘main’:
+mxm.c:58:10: warning: implicit declaration of function ‘time’; did you mean ‘utimes’? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          utimes
+mxm.c:65:4: warning: implicit declaration of function ‘dgemm_’; did you mean ‘dreml’? [-Wimplicit-function-declaration]
+    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
+    ^~~~~~
+    dreml
+RESULT:blis 10 0.2300ms
+RESULT:blis 20 0.1730ms
+RESULT:blis 30 0.1720ms
+RESULT:blis 40 0.1810ms
+RESULT:blis 50 0.2920ms
+RESULT:blis 60 0.2710ms
+RESULT:blis 70 0.2420ms
+RESULT:blis 80 0.2720ms
+RESULT:blis 90 0.3240ms
+RESULT:blis 100 0.3670ms
+RESULT:blis 200 1.4030ms
+RESULT:blis 300 3.7450ms
+RESULT:blis 400 7.4690ms
+RESULT:blis 500 13.6990ms
+RESULT:blis 600 22.9890ms
+RESULT:blis 700 36.4890ms
+RESULT:blis 800 52.8810ms
+RESULT:blis 900 74.8530ms
+RESULT:blis 1000 101.7100ms
+RESULT:blis 1500 338.0880ms
+RESULT:blis 2000 797.0440ms
+RESULT:blis 2500 1555.3410ms
+RESULT:blis 3000 2671.3390ms
+RESULT:blis 3500 4253.0080ms
+RESULT:blis 4000 6313.0160ms
+MESSAGE: BLAS Fri Apr 26 18:36:12 IST 2019 start
+mxm.c: In function ‘init’:
+mxm.c:6:56: warning: unused parameter ‘val’ [-Wunused-parameter]
+  void init(double* matrix, int nrows, int ncols,double val)
+                                                        ^~~
+mxm.c: In function ‘main’:
+mxm.c:58:10: warning: implicit declaration of function ‘time’; did you mean ‘utimes’? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          utimes
+mxm.c:65:4: warning: implicit declaration of function ‘dgemm_’; did you mean ‘dreml’? [-Wimplicit-function-declaration]
+    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
+    ^~~~~~
+    dreml
+RESULT:blas.exe 10 0.0040ms
+RESULT:blas.exe 20 0.0100ms
+RESULT:blas.exe 30 0.0230ms
+RESULT:blas.exe 40 0.0440ms
+RESULT:blas.exe 50 0.0830ms
+RESULT:blas.exe 60 0.1380ms
+RESULT:blas.exe 70 0.1750ms
+RESULT:blas.exe 80 0.2460ms
+RESULT:blas.exe 90 0.3600ms
+RESULT:blas.exe 100 0.5300ms
+RESULT:blas.exe 200 3.3600ms
+RESULT:blas.exe 300 11.2800ms
+RESULT:blas.exe 400 24.6310ms
+RESULT:blas.exe 500 44.9860ms
+RESULT:blas.exe 600 77.5460ms
+RESULT:blas.exe 700 125.7280ms
+RESULT:blas.exe 800 186.9170ms
+RESULT:blas.exe 900 272.8880ms
+RESULT:blas.exe 1000 403.8090ms
+RESULT:blas.exe 1500 1511.2410ms
+RESULT:blas.exe 2000 3615.3280ms
+RESULT:blas.exe 2500 7231.5310ms
+RESULT:blas.exe 3000 12482.4030ms
+RESULT:blas.exe 3500 19715.9940ms
+RESULT:blas.exe 4000 29666.9160ms
+MESSAGE: ATLAS Fri Apr 26 18:42:03 IST 2019 start
+mxm.c: In function ‘init’:
+mxm.c:6:56: warning: unused parameter ‘val’ [-Wunused-parameter]
+  void init(double* matrix, int nrows, int ncols,double val)
+                                                        ^~~
+mxm.c: In function ‘main’:
+mxm.c:58:10: warning: implicit declaration of function ‘time’; did you mean ‘utimes’? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          utimes
+mxm.c:65:4: warning: implicit declaration of function ‘dgemm_’; did you mean ‘dreml’? [-Wimplicit-function-declaration]
+    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
+    ^~~~~~
+    dreml
+RESULT:atlas 10 0.0270ms
+RESULT:atlas 20 0.0270ms
+RESULT:atlas 30 0.0240ms
+RESULT:atlas 40 0.0370ms
+RESULT:atlas 50 0.0490ms
+RESULT:atlas 60 0.0710ms
+RESULT:atlas 70 0.1350ms
+RESULT:atlas 80 0.1830ms
+RESULT:atlas 90 0.3150ms
+RESULT:atlas 100 0.3080ms
+RESULT:atlas 200 1.7120ms
+RESULT:atlas 300 4.2840ms
+RESULT:atlas 400 10.6640ms
+RESULT:atlas 500 16.6740ms
+RESULT:atlas 600 24.3550ms
+RESULT:atlas 700 37.5730ms
+RESULT:atlas 800 40.3570ms
+RESULT:atlas 900 43.9950ms
+RESULT:atlas 1000 46.9100ms
+RESULT:atlas 1500 75.2760ms
+RESULT:atlas 2000 88.9960ms
+RESULT:atlas 2500 126.1020ms
+RESULT:atlas 3000 182.2440ms
+RESULT:atlas 3500 217.9260ms
+RESULT:atlas 4000 267.0180ms
+MESSAGE: OBLAS Fri Apr 26 18:46:45 IST 2019 start
+mxm.c: In function ‘init’:
+mxm.c:6:56: warning: unused parameter ‘val’ [-Wunused-parameter]
+  void init(double* matrix, int nrows, int ncols,double val)
+                                                        ^~~
+mxm.c: In function ‘main’:
+mxm.c:58:10: warning: implicit declaration of function ‘time’; did you mean ‘utimes’? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          utimes
+mxm.c:65:4: warning: implicit declaration of function ‘dgemm_’; did you mean ‘dreml’? [-Wimplicit-function-declaration]
+    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
+    ^~~~~~
+    dreml
+RESULT:oblas 10 0.2110ms
+RESULT:oblas 20 0.2240ms
+RESULT:oblas 30 0.2050ms
+RESULT:oblas 40 0.2270ms
+RESULT:oblas 50 0.1940ms
+RESULT:oblas 60 0.2430ms
+RESULT:oblas 70 0.2860ms
+RESULT:oblas 80 0.3280ms
+RESULT:oblas 90 0.3370ms
+RESULT:oblas 100 0.3510ms
+RESULT:oblas 200 1.2260ms
+RESULT:oblas 300 46.1150ms
+RESULT:oblas 400 54.9650ms
+RESULT:oblas 500 42.6740ms
+RESULT:oblas 600 36.4750ms
+RESULT:oblas 700 36.9320ms
+RESULT:oblas 800 55.2810ms
+RESULT:oblas 900 43.8770ms
+RESULT:oblas 1000 43.3060ms
+RESULT:oblas 1500 69.8500ms
+RESULT:oblas 2000 102.8040ms
+RESULT:oblas 2500 117.2290ms
+RESULT:oblas 3000 195.7340ms
+RESULT:oblas 3500 241.8440ms
+RESULT:oblas 4000 285.1380ms
+MESSAGE: MKL Fri Apr 26 18:51:17 IST 2019 start
+mxm.c: In function ‘init’:
+mxm.c:6:56: warning: unused parameter ‘val’ [-Wunused-parameter]
+  void init(double* matrix, int nrows, int ncols,double val)
+                                                        ^~~
+mxm.c: In function ‘main’:
+mxm.c:58:10: warning: implicit declaration of function ‘time’; did you mean ‘utimes’? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          utimes
+mxm.c:65:4: warning: implicit declaration of function ‘dgemm_’; did you mean ‘dreml’? [-Wimplicit-function-declaration]
+    dgemm_(&transA, &transB, &nrowsA, &ncolsB, &common, &alpha, A, &nrowsA, B, &common, &beta, C, &nrowsA);
+    ^~~~~~
+    dreml
+RESULT:mkl 10 6.7530ms
+RESULT:mkl 20 10.3870ms
+RESULT:mkl 30 10.8320ms
+RESULT:mkl 40 10.9120ms
+RESULT:mkl 50 11.2020ms
+RESULT:mkl 60 11.9830ms
+RESULT:mkl 70 11.9060ms
+RESULT:mkl 80 11.6570ms
+RESULT:mkl 90 12.0970ms
+RESULT:mkl 100 12.3750ms
+RESULT:mkl 200 17.9410ms
+RESULT:mkl 300 22.8610ms
+RESULT:mkl 400 22.5290ms
+RESULT:mkl 500 25.6100ms
+RESULT:mkl 600 25.5690ms
+RESULT:mkl 700 29.8900ms
+RESULT:mkl 800 33.0250ms
+RESULT:mkl 900 31.1790ms
+RESULT:mkl 1000 36.1470ms
+RESULT:mkl 1500 67.2410ms
+RESULT:mkl 2000 114.8070ms
+RESULT:mkl 2500 186.7870ms
+RESULT:mkl 3000 706.5700ms
+RESULT:mkl 3500 958.8040ms
+RESULT:mkl 4000 1256.5700ms
